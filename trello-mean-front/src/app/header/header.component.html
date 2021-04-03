@@ -1,0 +1,16 @@
+<header>
+    <h1>Trello Mean</h1>
+    <ng-template *ngIf="connect; else elseBlock">
+        <nav>
+            <a href="/taches">Mes tâches</a>
+            <a href="/connection">Connection</a>
+        </nav>
+    </ng-template>
+    <ng-template #elseBlock>
+
+        <nav>
+            <a href="/taches">Mes tâches</a>
+            <a href="/deconnection">Deconnection</a>
+        </nav>
+    </ng-template>
+</header>

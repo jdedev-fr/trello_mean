@@ -1,0 +1,13 @@
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: oblique;
+    font-size: 0.7rem;
+    min-height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
