@@ -1,8 +1,8 @@
 <section>
-    <form action="">
-        <input type="text" placeholder="Login">
-        <input type="password">
+    <form [formGroup]="logForm" (ngSubmit)="ngConnect()">
+        <input type="text" placeholder="Login" formControlName="login">
+        <input type="password" formControlName="pass">
         <input type="submit" value="connection">
-        <p>Pas de compte : <a href="/register">inscrivez vous</a> !</p>
+        <p>Pas de compte : <a href="/enregistrement">inscrivez vous</a> !</p>
     </form>
 </section>

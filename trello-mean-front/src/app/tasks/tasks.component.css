@@ -1,0 +1,7 @@
+section {
+    padding-top: 80px;
+    min-height:90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
