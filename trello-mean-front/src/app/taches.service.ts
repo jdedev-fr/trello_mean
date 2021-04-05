@@ -8,7 +8,12 @@ export class TachesService {
   constructor() {
     this.tabTache = []
   }
-
+  reinit(tab) {
+    this.tabTache = []
+    for (let ligne of tab) {
+      this.tabTache.push({ title: ligne.title, content: ligne.content, state: ligne.state, modif: false })
+    }
+  }
   ajout() {
     this.tabTache.push({ title: "", content: "", state: 0, modif: true })
   }

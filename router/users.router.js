@@ -28,6 +28,20 @@ router.post('/', (req, res) => {
         res.send(newUser).status(200)
     }).catch(err => res.send(err).status(500))
 })
+router.post('/connect', (req, res) => {
+    trell.find().then((data) => {
+        let trouve = false
+        for (let ligne of data) {
+            if (ligne.name === req.body.nom && ligne.pass === req.body.mdp) {
+                trouve = true
+                res.send(ligne).status(200)
+            }
+        }
+        if (!trouve) res.send({ mess: "erreur d'identification" }).status(401)
+
+    }).catch(err => res.send(err).status(500))
+})
+
 router.put('/:id', (req, res) => {
     trell.findById(req.params.id).then(data => {
         data.name = req.body.nom
