@@ -1,3 +1,95 @@
 <section>
-    <p>tasks works!</p>
+    <article>
+        <h2>A Faire <a href="#" (click)="ajoutTache($event)">+</a></h2>
+        <div *ngFor="let tache of tachesService.tabTache; index as i">
+            <div class="card" *ngIf="tache.state==0;">
+                <ng-template [ngIf]="tache.modif==true">
+                    <input type="text" [(ngModel)]="tache.title" placeholder="Titre">
+                    <textarea [(ngModel)]="tache.content" placeholder="Contenu"></textarea>
+                    <div class="sp">
+                        <div></div>
+                        <button (click)="valid(i)">valider</button>
+                        <div></div>
+
+                    </div>
+                </ng-template>
+                <ng-template [ngIf]="tache.modif==false">
+                    <div class="sp">
+                        <div></div>
+                        <h3>{{tache.title}}</h3>
+                        <button (click)="del(i)" class="supp">X</button>
+                    </div>
+                    <p>{{tache.content}}</p>
+                    <div class="sp">
+                        <div></div>
+                        <button (click)="modif(i)">modif</button>
+                        <button (click)="mvTache(i,1)" class="prim">&gt;</button>
+
+                    </div>
+                </ng-template>
+
+            </div>
+        </div>
+    </article>
+    <article>
+        <h2>En cours</h2>
+        <div *ngFor="let tache of tachesService.tabTache; index as i">
+            <div class="card" *ngIf="tache.state==1;">
+                <ng-template [ngIf]="tache.modif==true">
+                    <input type="text" [(ngModel)]="tache.title" placeholder="Titre">
+                    <textarea [(ngModel)]="tache.content" placeholder="Contenu"></textarea>
+                    <div class="sp">
+                        <div></div>
+                        <button (click)="valid(i)">valider</button>
+                        <div></div>
+
+                    </div>
+                </ng-template>
+                <ng-template [ngIf]="tache.modif==false">
+                    <div class="sp">
+                        <div></div>
+                        <h3>{{tache.title}}</h3>
+                        <button (click)="del(i)" class="supp">X</button>
+                    </div>
+                    <p>{{tache.content}}</p>
+                    <div class="sp">
+                        <button (click)="mvTache(i,0)" class="prim">&lt;</button>
+                        <button (click)="modif(i)">modif</button>
+                        <button (click)="mvTache(i,2)" class="prim">&gt;</button>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </article>
+    <article>
+        <h2>Terminé</h2>
+        <div *ngFor="let tache of tachesService.tabTache; index as i">
+            <div class="card" *ngIf="tache.state==2;">
+                <ng-template [ngIf]="tache.modif==true">
+                    <input type="text" [(ngModel)]="tache.title" placeholder="Titre">
+                    <textarea [(ngModel)]="tache.content" placeholder="Contenu"></textarea>
+                    <div class="sp">
+                        <div></div>
+                        <button (click)="valid(i)">valider</button>
+                        <div></div>
+
+                    </div>
+                </ng-template>
+                <ng-template [ngIf]="tache.modif==false">
+                    <div class="sp">
+                        <div></div>
+                        <h3>{{tache.title}}</h3>
+                        <button (click)="del(i)" class="supp">X</button>
+                    </div>
+                    <p>{{tache.content}}</p>
+                    <div class="sp">
+
+                        <button (click)="mvTache(i,1)" class="prim">&lt;</button>
+                        <button (click)="modif(i)">modif</button>
+                        <div></div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </article>
 </section>

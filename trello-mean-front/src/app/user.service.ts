@@ -18,4 +18,7 @@ export class UserService {
   deconnection() {
     this.conect = false
   }
+  register(user: string, pass: string, mail: string) {
+    this.conect = true
+  }
 }

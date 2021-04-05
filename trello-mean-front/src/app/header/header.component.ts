@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
     //  console.log(this.userService.getCon())
   }
   deco(e) {
-    console.log(e)
+    //  console.log(e)
     this.userService.deconnection();
     this.router.navigate(['/connection']);
     e.preventDefault();

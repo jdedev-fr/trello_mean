@@ -1,6 +1,6 @@
 section {
     padding-top: 80px;
-    min-height:90vh;
+    min-height:95vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@ form>* {
     font-size: 1rem;
 }
 form>input[type=submit] {
-    background-color: rgb(62, 126, 62);
+    background-color: #5cb85c ;
     color:black;
     font-weight: bold;
 }
