@@ -12,11 +12,13 @@ import { from } from 'rxjs';
 import { TasksComponent } from './tasks/tasks.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserModComponent } from './user-mod/user-mod.component';
 
 const appRoutes: Routes = [
   { path: 'taches', component: TasksComponent },
   { path: 'connection', component: ConnectComponent },
   { path: 'enregistrement', component: RegisterComponent },
+  { path: 'monCompte', component: UserModComponent },
   { path: '404', component: NotFoundComponent },
   { path: '', redirectTo: '/connection', pathMatch: 'full' },
   { path: '**', redirectTo: '/404' }
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     FooterComponent,
     TasksComponent,
     RegisterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserModComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   providers: [],

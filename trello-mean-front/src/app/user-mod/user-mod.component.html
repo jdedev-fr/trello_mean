@@ -1,0 +1,9 @@
+<section>
+    <form [formGroup]="modifUserForm" (ngSubmit)="ngEnreg()">
+        <input type="text" placeholder="Login" formControlName="login">
+        <input type="mail" placeholder="Email" formControlName="email">
+        <input type="password" formControlName="pass">
+        <input type="password" formControlName="confirm">
+        <input type="submit" value="Enregistrement">
+    </form>
+</section>

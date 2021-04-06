@@ -1,9 +1,10 @@
 <header>
-    <h1>Trello Mean</h1>
+    <h1>Mes taches</h1>
     <div *ngIf="userService.conect==true; then thenBlock else elseBlock"></div>
     <ng-template #thenBlock>
         <nav>
             <a routerLink="/taches">Mes tâches</a>
+            <a routerLink="/monCompte">Mon compte</a>
             <a (click)="deco($event)" href="#">Deconnection</a>
         </nav>
     </ng-template>

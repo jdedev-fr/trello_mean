@@ -25,6 +25,7 @@ router.post('/', (req, res) => {
         tasks: []
     })
     newUser.save().then(() => {
+        newUser.pass = ""
         res.send(newUser).status(200)
     }).catch(err => res.send(err).status(500))
 })
@@ -34,6 +35,7 @@ router.post('/connect', (req, res) => {
         for (let ligne of data) {
             if (ligne.name === req.body.nom && ligne.pass === req.body.mdp) {
                 trouve = true
+                ligne.pass = ""
                 res.send(ligne).status(200)
             }
         }
@@ -48,6 +50,7 @@ router.put('/:id', (req, res) => {
         data.pass = req.body.mdp
         data.mail = req.body.email
         data.save().then(() => {
+            data.pass = ""
             res.send(data).status(200)
         }).catch(err => res.send(err).status(500))
     }).catch(err => res.send(err).status(500))
